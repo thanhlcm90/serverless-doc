@@ -76,6 +76,7 @@ My frontend web application is builded on ReactJS with [UmiJS](https://v2.umijs.
 
 - [Initialize the web application](frontend/init.md)
 - [Configure AWS Amplify](frontend/amplify.md)
+- [Build API service](frontend/api.md)
 - [Build a React app](frontend/build.md)
 
 > That's not final code guildline but it will show you how I setup the ReactJS App in short hand.
