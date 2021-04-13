@@ -14,7 +14,6 @@ It creates a CloudFormation stack from the submitted template, and that stack is
 
 AWS CDK (Cloud Development Kit), released in Developer Preview back in August 2018; allows you to use TypeScript, JavaScript, Java, .NET, and Python to create AWS infrastructure.
 
-
 ### How CDK works
 
 CDK internally uses CloudFormation. It converts your code into a CloudFormation template. So in the above example, you write the code at the bottom and it generates the CloudFormation template at the top.
@@ -31,6 +30,7 @@ When you run `cdk synth`, it converts these stacks into CloudFormation templates
 - [CDK Repository](https://github.com/aws/aws-cdk)
 
 ## Table of Contents
+1. [Initial the CDK project](init.md)
 1. [Configure DynamoDB in CDK](dynamo.md)
 2. [Configure S3 in CDK](s3.md)
 3. [Configure Cognito User Pool in CDK](cognito.md)

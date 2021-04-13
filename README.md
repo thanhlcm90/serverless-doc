@@ -72,4 +72,4 @@ My frontend web application is builded on ReactJS with [UmiJS](https://v2.umijs.
 - [Build and Deploy a React app](frontend/build.md)
 
 ## License <a name="License"></a>
-This document is licensed under the Apache 2.0 License and written by Thanh Le (thanhlcm90@gmail.com)
+This document is licensed under the Apache 2.0 License and written by Thanh Le (thanhlcm@sskpi.com)
