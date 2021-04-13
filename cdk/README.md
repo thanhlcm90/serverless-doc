@@ -38,3 +38,10 @@ When you run `cdk synth`, it converts these stacks into CloudFormation templates
 6. [CORS with CDK](cors.md)
 7. [Deploy Your Serverless Infrastructure](deploy.md)
 
+## Best practice
+
+For POC project, we create each lambda function for each Http request. 
+
+But in the big/complex project, we should build API Gateway with `RestAPI` instead of `LambdaRestApi`. 
+
+In that case, we will use `proxy` technology with `aws-serverless-express`. Thinking about use NodeJS `ExpressJS` to build lambda function and proxy to the API Gateway.
