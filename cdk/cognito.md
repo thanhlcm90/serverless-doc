@@ -88,7 +88,7 @@ export default class CognitoStack extends cdk.Construct {
 Let’s add the Cognito CDK package. Run the following script
 
 ```shell
-npm i @aws-cdk/aws-cognito --save
+$ npm i @aws-cdk/aws-cognito --save
 ```
 
 ## Add resource to the Stack
@@ -124,7 +124,7 @@ export default class POCStack extends cdk.Stack {
 To deploy your app, run the following
 
 ```shell
-cdk deploy
+$ cdk deploy
 ```
 
 You should see something like this at the end of the deploy process.

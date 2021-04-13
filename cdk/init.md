@@ -5,19 +5,19 @@
 You must configure your workstation with your credentials and an AWS Region, if you have not already done so. If you have the AWS CLI installed, the easiest way to satisfy this requirement is issue the following command
 
 ```shell
-aws configure
+$ aws configure
 ```
 
 Install the AWS CDK Toolkit globally using the following Node Package Manager command.
 
 ```shell
-npm -g install cdk
+$ npm -g install cdk
 ```
 
 Run the following command to verify correct installation and print the version number of the AWS CDK.
 
 ```shell
-cdk --version
+$ cdk --version
 ```
 
 ## Initial the project
@@ -25,7 +25,7 @@ cdk --version
 Many AWS CDK stacks that you write will include assets: external files that are deployed with the stack, such as AWS Lambda functions Docker images. The AWS CDK uploads these to an Amazon S3 bucket or other container so they are available to AWS CloudFormation during deployment. Deployment requires that these containers already exist in the account and region you are deploying into. Creating them is called bootstrapping:
 
 ```shell
-cdk bootstrap
+$ cdk bootstrap
 ```
 
 ## Application Stack

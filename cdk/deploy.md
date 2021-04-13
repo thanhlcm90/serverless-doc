@@ -7,7 +7,7 @@ Now that we have all our resources configured, let’s go ahead and deploy our e
 Run the following from your root directory:
 
 ```shell
-cdk deploy
+$ cdk deploy
 ```
 
 You should see something like this in your output.

@@ -41,7 +41,7 @@ export class DynamoStack extends cdk.Construct {
 Let’s add the DynamoDB CDK package. Run the following script
 
 ```shell
-npm i @aws-cdk/aws-dynamodb --save
+$ npm i @aws-cdk/aws-dynamodb --save
 ```
 
 ## Add resource to the Stack
@@ -70,7 +70,7 @@ export default class POCStack extends cdk.Stack {
 To deploy your app, run the following
 
 ```shell
-cdk deploy
+$ cdk deploy
 ```
 
 You should see something like this at the end of the deploy process.

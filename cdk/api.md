@@ -98,8 +98,8 @@ export class ApiStack extends cdk.Construct {
 Let’s add the Lambda and Gateway CDK package. Run the following script
 
 ```shell
-npm i @aws-cdk/aws-lambda --save
-npm i @aws-cdk/aws-apigateway --save
+$ npm i @aws-cdk/aws-lambda --save
+$ npm i @aws-cdk/aws-apigateway --save
 ```
 
 ## Write Lambda function
@@ -192,13 +192,13 @@ export default class POCStack extends cdk.Stack {
 Before deploy the stack, we need build the Typescript code into Javascript code, because the Lambda service only support Javascript file.
 
 ```shell
-tsc
+$ tsc
 ```
 
 To deploy your app, run the following
 
 ```shell
-cdk deploy
+$ cdk deploy
 ```
 
 You should see something like this at the end of the deploy process.
