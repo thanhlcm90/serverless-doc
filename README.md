@@ -52,6 +52,7 @@ In that block, I will help you to setup the project's AWS infrastructure as manu
 - [Set up your AWS account](manual/aws.md)
 - [Setup Dynamo Database](manual/dynamo.md)
 - [Setup AWS S3](manual/s3.md)
+- [Lambda and API Gateway](manual/api.md)
 - [Users and authentication](manual/cognito.md)
 - [CORS in Serverless](manual/cors.md)
 - [Logging](manual/log.md)
