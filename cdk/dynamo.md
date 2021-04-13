@@ -1,0 +1,1 @@
+# Configure DynamoDB in CDK
