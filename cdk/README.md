@@ -34,6 +34,45 @@ CDK internally uses CloudFormation. It converts your code into a CloudFormation 
 
 When you run `cdk synth`, it converts these stacks into CloudFormation templates. And when you run `cdk deploy`, it’ll submit these to CloudFormation. CloudFormation creates these stacks and all the resources that are defined in them.
 
+Here is example when compare between CloudFormation vs CDK
+
+1. Use CloudFormation template to decalre the Dynamo resource
+
+```yaml
+Resources:
+NotesTable:
+  Type: AWS::DynamoDB::Table
+  Properties:
+    TableName: DownloadFileStatus
+    AttributeDefinitions:
+      - AttributeName: userId
+        AttributeType: S
+      - AttributeName: fileKey
+        AttributeType: S
+    KeySchema:
+      - AttributeName: userId
+        KeyType: HASH
+      - AttributeName: fileKey
+        KeyType: RANGE
+    BillingMode: PAY_PER_REQUEST
+```
+
+2. Use CDK SDK, written by javascript
+
+```javascript
+const table = new dynamodb.Table(this, "DownloadFileStatus", {
+  partitionKey: { name: 'userId', type: dynamodb.AttributeType.STRING },
+  sortKey: { name: 'fileKey', type: dynamodb.AttributeType.STRING },
+  billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+});
+```
+
+**The first thing** to notice is that the resources are defined as class instances in JavaScript. That’s great because we are used to thinking in terms of objects in programming languages. And now we can do the same for our infrastructure
+
+**Second**, we can reuse these objects. We can combine and compose them. So if you always find yourself creating the same set of resources, you can make that into a new class and reuse it!
+
+> CDK is truly, infrastructure as code.
+
 ### Official Resources
 
 - [Developer Guide](https://docs.aws.amazon.com/cdk/latest/guide/home.html)
@@ -42,6 +81,7 @@ When you run `cdk synth`, it converts these stacks into CloudFormation templates
 - [CDK Repository](https://github.com/aws/aws-cdk)
 
 ## Table of Contents
+
 1. [Initial the CDK project](init.md)
 2. [Configure DynamoDB in CDK](dynamo.md)
 3. [Configure S3 in CDK](s3.md)
@@ -52,8 +92,8 @@ When you run `cdk synth`, it converts these stacks into CloudFormation templates
 
 ## Best practice
 
-For POC project, we create each lambda function for each Http request. 
+For POC project, we create each lambda function for each Http request.
 
-But in the big/complex project, we should build API Gateway with `RestAPI` instead of `LambdaRestApi`. 
+But in the big/complex project, we should build API Gateway with `RestAPI` instead of `LambdaRestApi`.
 
 In that case, we will use `proxy` technology with `aws-serverless-express`. Thinking about use NodeJS `ExpressJS` to build lambda function and proxy to the API Gateway.
