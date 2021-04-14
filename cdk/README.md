@@ -10,6 +10,18 @@ To do this we are going to be using AWS CloudFormation. CloudFormation is an AWS
 
 It creates a CloudFormation stack from the submitted template, and that stack is directly tied to the resources that have been created. So if you remove the stack, the services that it created will be removed as well
 
+## Problems with CloudFormation
+
+CloudFormation is great for defining your AWS resources. However it has a few major drawbacks.
+
+1. **Template is big**: In a CloudFormation template you need to define all the resources that your app needs. This includes quite a large number of minor resources that you won’t be directly interacting with. So your templates can easily be a few hundred lines long.
+
+2. **Hard to maintain**: YAML and JSON are easy to get started with. But it can be really hard to maintain large CloudFormation templates. And since these are just simple definition files, it makes it hard to reuse and compose them.
+
+3. **Difficult to learn**: Finally, the learning curve for CloudFormation templates can be really steep. You’ll find yourself constantly looking at the documentation to figure out how to define your resources.
+
+To fix these issues, AWS launched the [AWS CDK project back in August 2018](https://aws.amazon.com/blogs/developer/aws-cdk-developer-preview/). It allows you to use modern programming languages like JavaScript or Python, instead of YAML or JSON.
+
 ## AWS CDK
 
 AWS CDK (Cloud Development Kit), released in Developer Preview back in August 2018; allows you to use TypeScript, JavaScript, Java, .NET, and Python to create AWS infrastructure.
