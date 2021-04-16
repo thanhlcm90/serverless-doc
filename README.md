@@ -30,11 +30,11 @@ Serverless computing (or serverless for short), is an execution model where the 
 
 - Authentication with AWS Cognito
 - Logic function with AWS Lambda and AWS API Gateway
-- Database with AWS Dynamo
 - Storage with AWS S3
 - Logging with AWS CloudWatch
 - Cloud-powered mobile and web apps with AWS Amplify
 - Infrastucture as Code with AWS CDK
+- CI/CD with CodePipeline, CodeBuild, CodeDeploy
 
 ### Backend Technical Stack
 - Lambda NodeJS
@@ -53,7 +53,6 @@ In that block, I will help you to setup the project's AWS infrastructure as manu
 The document will include those steps:
 
 - [Set up your AWS account](manual/aws.md)
-- [Setup Dynamo Database](manual/dynamo.md)
 - [Setup AWS S3](manual/s3.md)
 - [Lambda and API Gateway](manual/api.md)
 - [Users and authentication](manual/cognito.md)
@@ -85,8 +84,8 @@ My frontend web application is builded on ReactJS with [UmiJS](https://v2.umijs.
 
 Finally, we have two repos for two projects:
 
-1. Backend Repo (datacom-poc-aws-infra)
-2. Frontend Repo (datacom-poc)
+1. Backend Repo (datacom-poc-aws-infra) ([Deploy doc](cdk/repo.md))
+2. Frontend Repo (datacom-poc) ([Deploy doc](frontend/repo.md))
 
 > In each repo, you can read the README document to setup and deploy the whole apllication by yourself.
 

@@ -83,12 +83,11 @@ const table = new dynamodb.Table(this, "DownloadFileStatus", {
 ## Table of Contents
 
 1. [Initial the CDK project](init.md)
-2. [Configure DynamoDB in CDK](dynamo.md)
-3. [Configure S3 in CDK](s3.md)
-4. [Configure Cognito User Pool in CDK](cognito.md)
-5. [Configure Lambda and API Gateway](api.md)
-6. [CORS with CDK](cors.md)
-7. [Deploy Your Serverless Infrastructure](deploy.md)
+2. [Configure S3 in CDK](s3.md)
+3. [Configure Cognito User Pool in CDK](cognito.md)
+4. [Configure Lambda and API Gateway](api.md)
+5. [CORS with CDK](cors.md)
+6. [Deploy Your Serverless Infrastructure](deploy.md)
 
 ## Best practice
 

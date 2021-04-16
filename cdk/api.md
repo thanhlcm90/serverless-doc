@@ -12,7 +12,6 @@ import * as lambda from "@aws-cdk/aws-lambda";
 import * as apigw from "@aws-cdk/aws-apigateway";
 import {UserPool} from "@aws-cdk/aws-cognito";
 import {IBucket} from "@aws-cdk/aws-s3";
-import {Table} from "@aws-cdk/aws-dynamodb";
 
 export interface ApiStackProps {
   userPool: UserPool;
@@ -33,15 +32,11 @@ export class ApiStack extends cdk.Construct {
       handler: "file_list.handler", // file is "file_list", function is "handler"
       environment: {
         BUCKET_NAME: bucket.bucketName,
-        TABLE_NAME: table.tableName, // pass the table name for processing with Dynamo DB
       },
     });
 
     // define role for lambda function to access the bucket
     bucket.grantRead(fileListFunc);
-
-    // define role for lambda function to access the dynamo table
-    table.grantReadWriteData(fileListFunc);
 
     // defines an API Gateway REST API resource backed by our "hello" function.
     const restApi = new apigw.LambdaRestApi(this, "dataComPOCLambdaRestApi", {
@@ -112,7 +107,6 @@ Add the following to `lambda/file_list.ts`
 import * as AWS from "aws-sdk";
 const s3 = new AWS.S3();
 import {APIGatewayProxyEvent, APIGatewayProxyResult} from "aws-lambda";
-const db = new AWS.DynamoDB.DocumentClient();
 
 if (!process.env.BUCKET_NAME) {
   throw new Error("Required environment variable BUCKET_NAME is missing");
@@ -163,24 +157,20 @@ import * as s3 from "@aws-cdk/aws-s3";
 import {S3Stack} from "./s3-stack";
 import CognitoStack from "./cognito-stack";
 import {ApiStack} from "./api-stack";
-import {DynamoStack} from "./dynamo-stack";
 
 export default class POCStack extends cdk.Stack {
   private readonly s3: S3Stack;
   private readonly cognito: CognitoStack;
   private readonly api: ApiStack;
-  private readonly dynamo: DynamoStack;
 
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     this.s3 = new S3Stack(this, "S3");
     this.cognito = new CognitoStack(this, "Cognito");
-    this.dynamo = new DynamoStack(this, "Dynamo");
     this.api = new ApiStack(this, "Api", {
       userPool: this.cognito.userPool,
       bucket: this.s3.uploads,
-      table: this.dynamo.table,
     });
   }
 }
@@ -212,8 +202,6 @@ DataComPocStackDev.CognitoAuthenticatedRoleName0DCC2D8C = DataComPocStackDev-Cog
 DataComPocStackDev.CognitoIdentityPoolId42D6FEAB = ap-southeast-1:52b58632-deba-4f82-b648-21ed0f9bec1a
 DataComPocStackDev.CognitoUserPoolClientId2F6CFE90 = 45d1h4bciqlk6d3uu0vilhhfjq
 DataComPocStackDev.CognitoUserPoolId622CD4B2 = ap-southeast-1_RivuYdwTo
-DataComPocStackDev.DynamoTableArn478698E3 = arn:aws:dynamodb:ap-southeast-1:964867551044:table/DataComPOCTable
-DataComPocStackDev.DynamoTableName4C29EEE6 = DataComPOCTable
 DataComPocStackDev.S3AttachmentsBucketNameC3FD403A = datacompocstackdev-s3uploads570493ed-7g8l8a76eviy
 
 Stack ARN:

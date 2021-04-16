@@ -4,7 +4,7 @@ In this tutorial, I will introduce how to create the Lambda function and API gat
 
 ## Overview
 
-Now we are going to add DynamoDB and S3 to the mix. We’ll also be adding a few other Lambda functions.
+Now we are going to add the S3 to the mix. We’ll also be adding a few other Lambda functions.
 
 So our new app backend architecture will look something like this.
 
