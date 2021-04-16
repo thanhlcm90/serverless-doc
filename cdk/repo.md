@@ -1,8 +1,4 @@
-# Welcome to your CDK TypeScript project!
-
-This is a blank project for TypeScript development with CDK.
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+# Datacom POC AWS CDK Repo
 
 ## What's this?
 * Create a Lambda function that can be invoked using API Gateway
