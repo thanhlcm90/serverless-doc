@@ -88,6 +88,7 @@ const table = new dynamodb.Table(this, "DownloadFileStatus", {
 4. [Configure Lambda and API Gateway](api.md)
 5. [CORS with CDK](cors.md)
 6. [Deploy Your Serverless Infrastructure](deploy.md)
+7. [Improve S3 - Automatically delete trash files](s3_auto_remove.md)
 
 ## Best practice
 
