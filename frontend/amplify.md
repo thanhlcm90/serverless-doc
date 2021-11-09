@@ -22,7 +22,7 @@ const config = {
   API: {
     endpoints: [
       {
-        name: 'Datacom POC API',
+        name: 'API',
         endpoint: REACT_APP_API_ENDPOINT_AWS,
         region: REACT_APP_API_REGION_AWS,
         custom_header: async () => ({
@@ -47,19 +47,19 @@ After add authentication config to API, we can write API request following
 
 ```javascript
 export async function fileList(params) {
-  return API.get('Datacom POC API', '/file', {
+  return API.get('API', '/file', {
     queryStringParameters: params,
   })
 }
 ```
 
-> Please remember using correct API Gateway name `Datacom POC API` that we used when created the API Gateway service
+> Please remember using correct API Gateway name `API` that we used when created the API Gateway service
 
 ### DELETE Request sample
 
 ```javascript
 export async function deleteFile(params) {
-  return API.del('Datacom POC API', '/file', {
+  return API.del('API', '/file', {
     queryStringParameters: params,
   })
 }
@@ -69,7 +69,7 @@ export async function deleteFile(params) {
 
 ```javascript
 export async function downloadFile(params) {
-  return API.post('Datacom POC API', '/download', {
+  return API.post('API', '/download', {
     body: params,
   })
 }

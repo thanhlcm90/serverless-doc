@@ -39,8 +39,8 @@ export class ApiStack extends cdk.Construct {
     bucket.grantRead(fileListFunc);
 
     // defines an API Gateway REST API resource backed by our "hello" function.
-    const restApi = new apigw.LambdaRestApi(this, "dataComPOCLambdaRestApi", {
-      restApiName: "Datacom POC API",
+    const restApi = new apigw.LambdaRestApi(this, "LambdaRestApi", {
+      restApiName: "API",
       handler: welcomeFunc,
       proxy: false,
       defaultCorsPreflightOptions: {
@@ -72,7 +72,7 @@ export class ApiStack extends cdk.Construct {
     // Cognito User pool to Authorize users.
     const authorizer = new apigw.CfnAuthorizer(this, "cfnAuth", {
       restApiId: restApi.restApiId,
-      name: "DataComPOCAPIAuthorizer",
+      name: "APIAuthorizer",
       type: apigw.AuthorizationType.COGNITO,
       identitySource: "method.request.header.Authorization",
       providerArns: [userPool.userPoolArn],
@@ -194,18 +194,18 @@ $ cdk deploy
 You should see something like this at the end of the deploy process.
 
 ```shell
- ✅  DataComPocStackDev
+ ✅  StackDev
 
 Outputs:
-DataComPocStackDev.ApidataComPOCLambdaRestApiEndpoint3D8B1823 = https://fjburztudh.execute-api.ap-southeast-1.amazonaws.com/prod/
-DataComPocStackDev.CognitoAuthenticatedRoleName0DCC2D8C = DataComPocStackDev-CognitoCognitoAuthRoleCognitoDe-9IG7Y0L57KOA
-DataComPocStackDev.CognitoIdentityPoolId42D6FEAB = ap-southeast-1:52b58632-deba-4f82-b648-21ed0f9bec1a
-DataComPocStackDev.CognitoUserPoolClientId2F6CFE90 = 45d1h4bciqlk6d3uu0vilhhfjq
-DataComPocStackDev.CognitoUserPoolId622CD4B2 = ap-southeast-1_RivuYdwTo
-DataComPocStackDev.S3AttachmentsBucketNameC3FD403A = datacompocstackdev-s3uploads570493ed-7g8l8a76eviy
+StackDev.ApiLambdaRestApiEndpoint3D8B1823 = https://fjburztudh.execute-api.ap-southeast-1.amazonaws.com/prod/
+StackDev.CognitoAuthenticatedRoleName0DCC2D8C = StackDev-CognitoCognitoAuthRoleCognitoDe-9IG7Y0L57KOA
+StackDev.CognitoIdentityPoolId42D6FEAB = ap-southeast-1:52b58632-deba-4f82-b648-21ed0f9bec1a
+StackDev.CognitoUserPoolClientId2F6CFE90 = 45d1h4bciqlk6d3uu0vilhhfjq
+StackDev.CognitoUserPoolId622CD4B2 = ap-southeast-1_RivuYdwTo
+StackDev.S3AttachmentsBucketNameC3FD403A = stackdev-s3uploads570493ed-7g8l8a76eviy
 
 Stack ARN:
-arn:aws:cloudformation:ap-southeast-1:964867551044:stack/DataComPocStackDev/f7fb4a40-983d-11eb-8d7e-06850023b7d0
+arn:aws:cloudformation:ap-southeast-1:964867551044:stack/StackDev/f7fb4a40-983d-11eb-8d7e-06850023b7d0
 ```
 
 You’ll notice the output has the name of our newly created Cognito User Poll and Cognito Identity Pool.

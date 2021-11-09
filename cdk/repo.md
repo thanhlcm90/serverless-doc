@@ -1,4 +1,4 @@
-# Datacom POC AWS CDK Repo
+# AWS CDK Repo
 
 ## What's this?
 * Create a Lambda function that can be invoked using API Gateway

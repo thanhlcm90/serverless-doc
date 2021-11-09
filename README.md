@@ -1,6 +1,6 @@
-# Welcome to Datacom POC project documents!
+# Welcome to Serverless example project documents!
 
-This repository contains project documents for the Datacom POC project
+This repository contains project documents for the Serverless Example
 
 ## Table of Contents
 1. [About this Repo](#About)
@@ -12,11 +12,11 @@ This repository contains project documents for the Datacom POC project
 7. [License](#License)
 
 ## About this Repo <a name="About"></a>
-This repo is my official document how to build serverless application for Datacom POC project. 
+This repo is my official document how to build serverless application. 
 
 ## Project Overview <a name="Overview"></a>
 
-The Datacom POC project is builded on Serverless Infrastucture Stack using AWS service
+This project is builded on Serverless Infrastucture Stack using AWS service
 
 ### What is Serverless?
 
@@ -84,8 +84,8 @@ My frontend web application is builded on ReactJS with [UmiJS](https://v2.umijs.
 
 Finally, we have two repos for two projects:
 
-1. Backend Repo (datacom-poc-aws-infra) ([Deploy doc](cdk/repo.md))
-2. Frontend Repo (datacom-poc) ([Deploy doc](frontend/repo.md))
+1. Backend Repo (aws-infra) ([Deploy doc](cdk/repo.md))
+2. Frontend Repo (frontend) ([Deploy doc](frontend/repo.md))
 
 > In each repo, you can read the README document to setup and deploy the whole apllication by yourself.
 

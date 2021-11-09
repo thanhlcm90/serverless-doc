@@ -42,7 +42,7 @@ const envConfig: cdk.Environment = {
   account: "964867551044",
 };
 
-new POCStack(app, "DataComPocStackDev", {
+new POCStack(app, "StackDev", {
   env: envConfig,
 });
 ```

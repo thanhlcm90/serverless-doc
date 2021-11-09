@@ -34,7 +34,7 @@ const config = {
   API: {
     endpoints: [
       {
-        name: 'Datacom POC API',
+        name: 'API',
         endpoint: REACT_APP_API_ENDPOINT_AWS,
         region: REACT_APP_API_REGION_AWS
       },
@@ -99,28 +99,28 @@ We need some variables that will be printed when deploy by CDK in the previous [
 
 
 ```shell
-DataComPocStackDev: deploying...
+StackDev: deploying...
 [0%] start: Publishing 2a7da9c0078815cc29a576511f6dac1953c243cc0a415edd8c86ed56943000c1:current
 [50%] success: Published 2a7da9c0078815cc29a576511f6dac1953c243cc0a415edd8c86ed56943000c1:current
 [50%] start: Publishing 577a52b9113e34cf42bf89d042a0e9b36d3417c592e6953fd14de3f860f50079:current
 [100%] success: Published 577a52b9113e34cf42bf89d042a0e9b36d3417c592e6953fd14de3f860f50079:current
-DataComPocStackDev: creating CloudFormation changeset...
+StackDev: creating CloudFormation changeset...
 [█████████████████████████████·····························] (15/30)
 
 
 
- ✅  DataComPocStackDev
+ ✅  StackDev
 
 Outputs:
-DataComPocStackDev.ApidataComPOCLambdaRestApiEndpoint3D8B1823 = https://fjburztudh.execute-api.ap-southeast-1.amazonaws.com/prod/
-DataComPocStackDev.CognitoAuthenticatedRoleName0DCC2D8C = DataComPocStackDev-CognitoCognitoAuthRoleCognitoDe-9IG7Y0L57KOA
-DataComPocStackDev.CognitoIdentityPoolId42D6FEAB = ap-southeast-1:52b58632-deba-4f82-b648-21ed0f9bec1a
-DataComPocStackDev.CognitoUserPoolClientId2F6CFE90 = 45d1h4bciqlk6d3uu0vilhhfjq
-DataComPocStackDev.CognitoUserPoolId622CD4B2 = ap-southeast-1_RivuYdwTo
-DataComPocStackDev.S3AttachmentsBucketNameC3FD403A = datacompocstackdev-s3uploads570493ed-7g8l8a76eviy
+StackDev.ApiLambdaRestApiEndpoint3D8B1823 = https://fjburztudh.execute-api.ap-southeast-1.amazonaws.com/prod/
+StackDev.CognitoAuthenticatedRoleName0DCC2D8C = StackDev-CognitoCognitoAuthRoleCognitoDe-9IG7Y0L57KOA
+StackDev.CognitoIdentityPoolId42D6FEAB = ap-southeast-1:52b58632-deba-4f82-b648-21ed0f9bec1a
+StackDev.CognitoUserPoolClientId2F6CFE90 = 45d1h4bciqlk6d3uu0vilhhfjq
+StackDev.CognitoUserPoolId622CD4B2 = ap-southeast-1_RivuYdwTo
+StackDev.S3AttachmentsBucketNameC3FD403A = stackdev-s3uploads570493ed-7g8l8a76eviy
 
 Stack ARN:
-arn:aws:cloudformation:ap-southeast-1:964867551044:stack/DataComPocStackDev/f7fb4a40-983d-11eb-8d7e-06850023b7d0
+arn:aws:cloudformation:ap-southeast-1:964867551044:stack/StackDev/f7fb4a40-983d-11eb-8d7e-06850023b7d0
 ```
 
 You’ll notice that:
@@ -133,7 +133,7 @@ You’ll notice that:
 
 4. `REACT_APP_IDENTITY_POOL_ID_AWS` is equal `CognitoUserPoolId622CD4B2`
 
-5. `REACT_APP_API_ENDPOINT_AWS` is equal `ApidataComPOCLambdaRestApiEndpoint3D8B1823`
+5. `REACT_APP_API_ENDPOINT_AWS` is equal `ApiLambdaRestApiEndpoint3D8B1823`
 
 ## Add AWS Amplify
 
@@ -150,7 +150,7 @@ A couple of notes here.
 
 - Amplify refers to Cognito as `Auth` and API Gateway as `API`
 - The `mandatorySignIn` flag for `Auth` is set to true because we want our users to be signed in before they can interact with our app
-- The `name: "Datacom POC API"` is basically telling Amplify that we want to name our API. Amplify allows you to add multiple APIs that your app is going to work with. In our case our entire backend is just one single API.
+- The `name: "API"` is basically telling Amplify that we want to name our API. Amplify allows you to add multiple APIs that your app is going to work with. In our case our entire backend is just one single API.
 - The `Amplify.configure()` is just setting the various AWS resources that we want to interact with. It isn’t doing anything else special here beside configuration. So while this might look intimidating, just remember this is only setting things up.
 
 ## Login with Cognito

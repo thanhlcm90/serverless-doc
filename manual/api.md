@@ -59,7 +59,7 @@ const s3 = new AWS.S3();
 
 exports.handler = async (event) => {
     const params = {
-        Bucket: 'DatacomPOCUploads',
+        Bucket: 'Uploads',
     };
     const data = await s3.listObjectsV2(params).promise();
     return {

@@ -22,8 +22,8 @@ Please check my code in previous section [Configure Lambda and API Gateway in CD
 
 ```javascript
 // defines an API Gateway REST API resource backed by our "hello" function.
-const restApi = new apigw.LambdaRestApi(this, "dataComPOCLambdaRestApi", {
-    restApiName: "Datacom POC API",
+const restApi = new apigw.LambdaRestApi(this, "LambdaRestApi", {
+    restApiName: "API",
     handler: welcomeFunc,
     proxy: false,
     defaultCorsPreflightOptions: {

@@ -22,7 +22,7 @@ Go to the API Gateway detail, and click to `Enable CORS` in `Action` menu
 
 ![Alt text](images/cors1.png?raw=true)
 
-Check the option Gateway Responses for Datacom POC API API `DEFAULT 4XX` and `DEFAULT 5XX` to enable CORS for error response.
+Check the option Gateway Responses for the API `DEFAULT 4XX` and `DEFAULT 5XX` to enable CORS for error response.
 
 ![Alt text](images/cors2.png?raw=true)
 

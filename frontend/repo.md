@@ -1,4 +1,4 @@
-# Datacom POC Web App Client Repo
+# Web App Client Repo
 
 ## What's this?
 

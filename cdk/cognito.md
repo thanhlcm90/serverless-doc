@@ -127,16 +127,16 @@ $ cdk deploy
 You should see something like this at the end of the deploy process.
 
 ```shell
- ✅  DataComPocStackDev
+ ✅  StackDev
 
 Outputs:
-DataComPocStackDev.CognitoIdentityPoolId42D6FEAB = ap-southeast-1:52b58632-deba-4f82-b648-21ed0f9bec1a
-DataComPocStackDev.CognitoUserPoolClientId2F6CFE90 = 45d1h4bciqlk6d3uu0vilhhfjq
-DataComPocStackDev.CognitoUserPoolId622CD4B2 = ap-southeast-1_RivuYdwTo
-DataComPocStackDev.S3AttachmentsBucketNameC3FD403A = datacompocstackdev-s3uploads570493ed-7g8l8a76eviy
+StackDev.CognitoIdentityPoolId42D6FEAB = ap-southeast-1:52b58632-deba-4f82-b648-21ed0f9bec1a
+StackDev.CognitoUserPoolClientId2F6CFE90 = 45d1h4bciqlk6d3uu0vilhhfjq
+StackDev.CognitoUserPoolId622CD4B2 = ap-southeast-1_RivuYdwTo
+StackDev.S3AttachmentsBucketNameC3FD403A = stackdev-s3uploads570493ed-7g8l8a76eviy
 
 Stack ARN:
-arn:aws:cloudformation:ap-southeast-1:964867551044:stack/DataComPocStackDev/f7fb4a40-983d-11eb-8d7e-06850023b7d0
+arn:aws:cloudformation:ap-southeast-1:964867551044:stack/StackDev/f7fb4a40-983d-11eb-8d7e-06850023b7d0
 ```
 
 You’ll notice the output has the name of our newly created Cognito User Poll and Cognito Identity Pool.
